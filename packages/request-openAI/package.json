@@ -1,0 +1,20 @@
+{
+  "name": "@huameow/request-open-ai",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/request-open-ai.cjs.js",
+  "module": "lib/request-open-ai.esm.js",
+  "browser": "lib/request-open-ai.umd.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "build:type": "tsc -p ./tsconfig.type.json",
+    "test": "jest --coverage"
+  },
+  "license": "ISC",
+  "repository": "huameow",
+  "author": {
+    "name": "cieldon",
+    "email": "cieldon32@gmail.com"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "@huameow/schematics",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "postbuild": "npm run copy:collection && npm run copy:lib",
+    "build": "rm -rf dist && tsc --project tsconfig.lib.json",
+    "clean": "gulp clean:src",
+    "copy:collection": "cpx src/collection.json dist && cpx 'src/lib/**/schema.json' dist/lib",
+    "copy:lib": "cpx 'src/lib/**/{files,workspace}/**/*.*' dist/lib && cpx 'src/lib/**/{files,workspace}/**/.!(gitignore)' dist/lib",
+    "lint": "eslint '{src,test}/**/*.ts' --fix",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "test": "npm run clean && NODE_ENV=test jest -w 1 --no-cache --config jest.json",
+    "test:dev": "NODE_ENV=test npm run -s test -- --watchAll",
+    "prerelease": "npm run build",
+    "release": "release-it",
+    "schematics": "schematics"
+  },
+  "license": "ISC",
+  "repository": "huameow",
+  "author": {
+    "name": "cieldon",
+    "email": "cieldon32@gmail.com"
+  },
+  "schematics": "./dist/collection.json",
+  "dependencies": {
+    "@angular-devkit/core": "^10.2.0",
+    "@angular-devkit/schematics": "^11.2.9",
+    "@angular-devkit/schematics-cli": "0.1102.10",
+    "mockjs": "^1.1.0",
+    "querystring": "^0.2.0",
+    "ramda": "^0.27.1",
+    "sync-request": "^6.1.0"
+  },
+  "nyc": {
+    "include": [
+      "src"
+    ],
+    "exclude": [
+      "node_modules",
+      "test"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  },
+  "gitHead": "000c88e248e4466020ee5d5f4157e08ecaa4bca8"
+}

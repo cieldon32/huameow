@@ -1,0 +1,62 @@
+{
+  "name": "@huameow/cli",
+  "version": "0.0.1",
+  "bin": {
+    "hua": "bin/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "gulp clean:bundle",
+    "format": "prettier --write \"**/*.ts\"",
+    "lint": "eslint '{lib,commands,actions}/**/*.ts' --fix",
+    "start": "node bin/index.js",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "test": "jest --config test/jest-config.json",
+    "test:dev": "npm run clean && jest --config test/jest-config.json --watchAll",
+    "prerelease": "npm run build"
+  },
+  "keywords": [
+    "huameow cli"
+  ],
+  "license": "ISC",
+  "description": "the cli for the frond-end of stoneatom",
+  "repository": "huameow",
+  "author": {
+    "name": "cieldon",
+    "email": "cieldon32@gmail.com"
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^10.1.1",
+    "@angular-devkit/schematics": "^10.1.1",
+    "@angular-devkit/schematics-cli": "0.1102.10",
+    "@huameow/schematics": "workspace:0.0.1",
+    "chalk": "^4.1.0",
+    "chokidar": "^3.4.2",
+    "cli-table3": "^0.6.0",
+    "commander": "4.1.1",
+    "fork-ts-checker-webpack-plugin": "^5.2.0",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.3.3",
+    "node-emoji": "^1.10.0",
+    "node-typescript-compiler": "^2.1.2",
+    "ora": "^5.1.0",
+    "os-name": "^4.0.0",
+    "querystring": "^0.2.0",
+    "ramda": "^0.27.1",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.4",
+    "sync-request": "^6.1.0",
+    "tree-kill": "^1.2.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^8.2.1",
+    "@types/node-emoji": "^1.8.1",
+    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths-webpack-plugin": "^3.3.0"
+  },
+  "gitHead": "000c88e248e4466020ee5d5f4157e08ecaa4bca8"
+}

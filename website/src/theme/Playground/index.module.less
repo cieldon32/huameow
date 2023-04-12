@@ -1,0 +1,54 @@
+@ifm-color-emphasis-300: #f0f0f0;
+
+.playgroundContainer {
+  margin-bottom: 1rem;
+  border: 1px solid @ifm-color-emphasis-300;
+}
+
+.playgroundContent {
+  padding: 1rem;
+  border-bottom: 0;
+  background-color: #fff;
+}
+
+.playgroundIDE {
+  background-color: @ifm-color-emphasis-300;
+}
+
+:global {
+  :local(.playgroundIDE) {
+    .margin-vert--md {
+      margin: 0 !important;
+    }
+
+    > div {
+      margin: 0;
+    }
+  }
+
+  :local(.playgroundContainer) .prism-code {
+    border-radius: 0;
+  }
+}
+
+.codeBoxActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px dashed @ifm-color-emphasis-300;
+  padding: 0.5rem 1rem;
+  gap: 16px;
+}
+
+.svgIcon {
+  color: #000;
+  opacity: 0.5;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.svgIcon:hover {
+  color: #000;
+  opacity: 1;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@huameow/<%= name%>",
+  "version": "0.0.0",
+  "description": "<%= description%>",
+  "main": "lib/<%= name%>.cjs.js",
+  "module": "lib/<%= name%>.esm.js",
+  "browser": "lib/<%= name%>.umd.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "build:type": "tsc -p ./tsconfig.type.json",
+    "test": "jest --coverage"
+  },
+  "license": "ISC",
+  "repository": "huameow",
+  "author": {
+    "name": "cieldon",
+    "email": "cieldon32@gmail.com"
+  }
+}

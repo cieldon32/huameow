@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsLibrary",
+  "title": "library Options Schema",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the library.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the new project?"
+    },
+    "author": {
+      "type": "string",
+      "description": "library author.",
+      "default": ""
+    },
+    "description": {
+      "type": "string",
+      "description": "library description.",
+      "default": ""
+    },
+    "directory": {
+      "type": "string",
+      "description": "library destination directory"
+    },
+    "version": {
+      "type": "string",
+      "description": "library version.",
+      "default": "0.0.1"
+    },
+    "language": {
+      "type": "string",
+      "description": "library language."
+    },
+    "packageManager": {
+      "type": "string",
+      "description": "library package manager."
+    },
+    "dependencies": {
+      "type": "string",
+      "description": "library dependencies."
+    },
+    "devDependencies": {
+      "type": "string",
+      "description": "library development dependencies."
+    }
+  },
+  "required": []
+}
