@@ -145,6 +145,7 @@ importers:
 
   example:
     specifiers:
+      '@huameow/request-openAI': workspace:0.0.1
       '@material/animation': ^14.0.0
       '@material/banner': ^14.0.0
       '@material/base': ^14.0.0
@@ -193,6 +194,7 @@ importers:
       three-orbit-controls: ^82.1.0
       three-transformcontrols: ^0.78.1
     dependencies:
+      '@huameow/request-openAI': link:../packages/request-openAI
       '@material/animation': 14.0.0
       '@material/banner': 14.0.0
       '@material/base': 14.0.0
@@ -297,6 +299,9 @@ importers:
       '@types/node-emoji': 1.8.2
       tsconfig-paths: 3.14.2
       tsconfig-paths-webpack-plugin: 3.5.2
+
+  packages/request-openAI:
+    specifiers: {}
 
   packages/schematics:
     specifiers:

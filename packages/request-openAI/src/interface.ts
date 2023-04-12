@@ -1,4 +1,10 @@
-export interface Configuration {
+export interface Configuration{
+  baseURL?: string;
+  apiKey?: string;
+  apiOrg?: string;
+}
+
+export interface ClientConfiguration {
   /**
    * 基础路径
    *

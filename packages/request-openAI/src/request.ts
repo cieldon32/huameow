@@ -7,7 +7,7 @@ import {
 } from './http';
 
 import type {
-  Configuration,
+  ClientConfiguration,
   CreateChatCompletionRequest,
   CreateCompletionRequest,
   CreateEditRequest,
@@ -28,9 +28,9 @@ function buildURL(path: string, base?: string): URL {
 }
 
 export class OpenAIApiBuilder {
-  constructor(public configuration: Configuration) {}
+  constructor(public configuration: ClientConfiguration) {}
 
-  configure(configuration: Configuration) {
+  configure(configuration: ClientConfiguration) {
     this.configuration = { ...this.configuration, ...configuration };
   }
 
@@ -179,7 +179,7 @@ export class OpenAIApiBuilder {
     };
   }
 
-  static build(configuration: Configuration) {
+  static build(configuration: ClientConfiguration) {
     return new OpenAIApiBuilder(configuration);
   }
 }

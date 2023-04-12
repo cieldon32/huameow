@@ -1,7 +1,7 @@
 {
-  "name": "@huameow/request-open-ai",
-  "version": "0.0.0",
-  "description": "",
+  "name": "@huameow/request-openAI",
+  "version": "0.0.1",
+  "description": "request openAI",
   "main": "lib/request-open-ai.cjs.js",
   "module": "lib/request-open-ai.esm.js",
   "browser": "lib/request-open-ai.umd.js",

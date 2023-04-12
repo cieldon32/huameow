@@ -1,7 +1,7 @@
 {
   "name": "huameow",
   "version": "0.0.1",
-  "description": "",
+  "description": "huameow",
   "scripts": {
     "build": "node ./scripts/build.js",
     "build:cli": "node ./scripts/buildCli.js",
@@ -10,8 +10,8 @@
     "exb": "cd example && pnpm build",
     "doc": "cd website && pnpm start"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["huameow"],
+  "author": "carlymeow",
   "license": "ISC",
   "engines": {
     "node": ">=16.17.0",
