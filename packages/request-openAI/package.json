@@ -1,6 +1,6 @@
 {
-  "name": "@huameow/request-openAI",
-  "version": "0.0.1",
+  "name": "@huameow/request-openai",
+  "version": "0.0.2",
   "description": "request openAI",
   "main": "lib/request-open-ai.cjs.js",
   "module": "lib/request-open-ai.esm.js",
@@ -16,5 +16,9 @@
   "author": {
     "name": "cieldon",
     "email": "cieldon32@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

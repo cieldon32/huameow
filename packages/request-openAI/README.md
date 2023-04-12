@@ -1,6 +1,6 @@
 ## How to use
 ```
-import OpenAI from '@huameow/request-openAI';
+import OpenAI from '@huameow/request-openai';
 function App() {
   const openai = new OpenAI({
     baseURL: 'https://xxx',
