@@ -47,5 +47,5 @@
     }
   },
   "include": ["src/**/*", "**/*.spec.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "lib"]
 }

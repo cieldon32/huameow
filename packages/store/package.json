@@ -11,23 +11,22 @@
     "build:type": "tsc -p ./tsconfig.type.json",
     "test": "jest --coverage"
   },
-  "dependencies": {
-    "browserify": "latest",
-    "@types/browserify": "latest",
-    "typescript": "next"
-  },
   "license": "ISC",
   "author": {
     "name": "cieldon",
     "email": "cieldon32@gmail.com"
   },
   "files": [
+    "lib/store.cjs.js",
+    "lib/store.esm.js",
+    "lib/store.umd.js",
+    "lib/index.d.ts",
     "README.md"
   ],
   "repository": {
     "type": "git",
     "url": "git@github.com:cieldon32/huameow.git",
-    "directory": "packages/store"
+    "directory": "/packages/store"
   },
   "publishConfig": {
     "access": "public",
