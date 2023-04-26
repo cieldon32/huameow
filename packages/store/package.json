@@ -1,6 +1,6 @@
 {
   "name": "@huameow/store",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
   "main": "lib/store.cjs.js",
   "module": "lib/store.esm.js",
@@ -10,6 +10,11 @@
     "build": "NODE_ENV=production rollup -c",
     "build:type": "tsc -p ./tsconfig.type.json",
     "test": "jest --coverage"
+  },
+  "dependencies": {
+    "browserify": "latest",
+    "@types/browserify": "latest",
+    "typescript": "next"
   },
   "license": "ISC",
   "author": {
