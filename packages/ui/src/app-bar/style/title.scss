@@ -1,0 +1,42 @@
+.mdc-top-app-bar__title {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto, sans-serif;
+  /* @alternate */
+  font-family: var(--mdc-typography-headline6-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  font-size: 1.25rem;
+  /* @alternate */
+  font-size: var(--mdc-typography-headline6-font-size, 1.25rem);
+  line-height: 2rem;
+  /* @alternate */
+  line-height: var(--mdc-typography-headline6-line-height, 2rem);
+  font-weight: 500;
+  /* @alternate */
+  font-weight: var(--mdc-typography-headline6-font-weight, 500);
+  letter-spacing: 0.0125em;
+  /* @alternate */
+  letter-spacing: var(--mdc-typography-headline6-letter-spacing, 0.0125em);
+  text-decoration: inherit;
+  /* @alternate */
+  -webkit-text-decoration: var(--mdc-typography-headline6-text-decoration, inherit);
+          text-decoration: var(--mdc-typography-headline6-text-decoration, inherit);
+  text-transform: inherit;
+  /* @alternate */
+  text-transform: var(--mdc-typography-headline6-text-transform, inherit);
+  /* @noflip */ /*rtl:ignore*/
+  padding-left: 20px;
+  /* @noflip */ /*rtl:ignore*/
+  padding-right: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+}
+[dir=rtl] .mdc-top-app-bar__title, .mdc-top-app-bar__title[dir=rtl] {
+  /*rtl:begin:ignore*/
+  /* @noflip */ /*rtl:ignore*/
+  padding-left: 0;
+  /* @noflip */ /*rtl:ignore*/
+  padding-right: 20px;
+  /*rtl:end:ignore*/
+}

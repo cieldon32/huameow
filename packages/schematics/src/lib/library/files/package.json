@@ -12,9 +12,20 @@
     "test": "jest --coverage"
   },
   "license": "ISC",
-  "repository": "huameow",
   "author": {
     "name": "cieldon",
     "email": "cieldon32@gmail.com"
+  },
+  "files": [
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cieldon32/huameow.git",
+    "directory": "packages/<%= name%>"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

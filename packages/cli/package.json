@@ -45,7 +45,6 @@
     "ora": "^5.1.0",
     "os-name": "^4.0.0",
     "querystring": "^0.2.0",
-    "ramda": "^0.27.1",
     "rimraf": "^3.0.2",
     "shelljs": "^0.8.4",
     "sync-request": "^6.1.0",

@@ -1,0 +1,14 @@
+:root {
+  --mdc-layout-grid-margin-expanded: 24px;
+  --mdc-layout-grid-gutter-expanded: 24px;
+  --mdc-layout-grid-column-width-expanded: 72px;
+  --mdc-layout-grid-margin-medium: 16px;
+  --mdc-layout-grid-gutter-medium: 16px;
+  --mdc-layout-grid-column-width-medium: 72px;
+  --mdc-layout-grid-margin-compact: 16px;
+  --mdc-layout-grid-gutter-compact: 16px;
+  --mdc-layout-grid-column-width-compact: 72px;
+}
+@import url(./grid.scss);
+@import url(./row.scss);
+@import url(./cell.scss);

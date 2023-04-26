@@ -1,0 +1,31 @@
+{
+  "name": "@huameow/store",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/store.cjs.js",
+  "module": "lib/store.esm.js",
+  "browser": "lib/store.umd.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "build:type": "tsc -p ./tsconfig.type.json",
+    "test": "jest --coverage"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "cieldon",
+    "email": "cieldon32@gmail.com"
+  },
+  "files": [
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cieldon32/huameow.git",
+    "directory": "packages/store"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

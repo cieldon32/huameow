@@ -1,0 +1,13 @@
+export declare function signum(num: number): number;
+export declare function lerp(start: number, stop: number, amount: number): number;
+export declare function clampInt(min: number, max: number, input: number): number;
+export declare function clampDouble(min: number, max: number, input: number): number;
+export declare function sanitizeDegreesInt(degrees: number): number;
+export declare function sanitizeDegreesDouble(degrees: number): number;
+export declare function rotationDirection(from: number, to: number): number;
+export declare function differenceDegrees(a: number, b: number): number;
+export declare function matrixMultiply(row: number[], matrix: number[][]): number[];
+export declare function divide(a: number, b: number): number;
+export declare function pow(a: number, b: number): number;
+export declare function max(a: number, b: number): number;
+export declare function min(a: number, b: number): number;

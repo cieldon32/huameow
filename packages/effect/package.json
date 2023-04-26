@@ -1,0 +1,37 @@
+{
+  "name": "@huameow/effect",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/effect.cjs.js",
+  "module": "lib/effect.esm.js",
+  "browser": "lib/effect.umd.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "build:type": "tsc -p ./tsconfig.type.json",
+    "test": "jest --coverage"
+  },
+  "dependencies": {
+    "rehype-stringify": "^9.0.3",
+    "remark-gfm": "^3.0.1",
+    "remark-parse": "^10.0.1",
+    "unified": "^10.1.2"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "cieldon",
+    "email": "cieldon32@gmail.com"
+  },
+  "files": [
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cieldon32/huameow.git",
+    "directory": "packages/effect"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

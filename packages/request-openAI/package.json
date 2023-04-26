@@ -1,6 +1,6 @@
 {
   "name": "@huameow/request-openai",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "request openAI",
   "main": "lib/request-open-ai.cjs.js",
   "module": "lib/request-open-ai.esm.js",
@@ -12,10 +12,17 @@
     "test": "jest --coverage"
   },
   "license": "ISC",
-  "repository": "huameow",
   "author": {
     "name": "cieldon",
     "email": "cieldon32@gmail.com"
+  },
+  "files": [
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cieldon32/huameow.git",
+    "directory": "packages/request-openAI"
   },
   "publishConfig": {
     "access": "public",
