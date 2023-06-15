@@ -17,6 +17,10 @@
     "email": "cieldon32@gmail.com"
   },
   "files": [
+    "lib/<%= name%>.cjs.js",
+    "lib/<%= name%>.esm.js",
+    "lib/<%= name%>.umd.js",
+    "lib/index.d.ts",
     "README.md"
   ],
   "repository": {

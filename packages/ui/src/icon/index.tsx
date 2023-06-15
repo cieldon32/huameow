@@ -1,41 +1,20 @@
-import React from 'react';
-import {is} from 'ramda';
-import paths from './paths';
-import {Icon as Ic} from './icon';
-import {IconStack} from './stack';
-import {IconProps} from './interface';
+import classnames from 'classnames';
+import type{BaseCompaonentProps} from '@/base/default.interface';
+import {CSS_CLASSES} from './constants';
+import './index.scss';
 
-const Icon = React.forwardRef<SVGSVGElement, IconProps>(({
-  path,
-  color,
+
+
+export const Icon = ({
   className,
-  ...props
-}, ref) => {
-  const getPath = (name: keyof typeof paths) => {
-    return paths[name] || name;
-  }
+  children
+}: BaseCompaonentProps) => {
+  const classNames = classnames(CSS_CLASSES.ROOT, className, {
+  });
+
   return (
-    <span className={className}>
-      {
-        is(String, path) ? (
-          <Ic path={getPath(path)} color={color} ref={ref} {...props} />
-        ) : null
-      }
-      {
-        is(Array, path) ? (
-          <IconStack color={is(Array, color) ? null : color} ref={ref} {...props}>
-            {
-              path.map((p: any, index) => (
-                <Ic path={getPath(p)} color={is(Array, color) ? color[index]:  null} />
-              ))
-            }
-          </IconStack>
-        ) : null
-      }
-    </span>
+    <div className={classNames}>
+      <span>{children}</span>
+    </div>
   )
-});
-
-Icon.displayName = 'Icon';
-
-export default Icon;
+}

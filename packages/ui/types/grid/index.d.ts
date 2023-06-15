@@ -1,6 +1,7 @@
+import type { BaseCompaonentProps } from '@/base/default.interface';
 import './style/index.scss';
 export declare const Grid: {
-    ({ children }: any): JSX.Element;
-    Row({ children }: any): JSX.Element;
-    Cell({ children }: any): JSX.Element;
+    ({ children }: BaseCompaonentProps): import("react/jsx-runtime").JSX.Element;
+    Row({ children }: BaseCompaonentProps): import("react/jsx-runtime").JSX.Element;
+    Cell({ children }: BaseCompaonentProps): import("react/jsx-runtime").JSX.Element;
 };

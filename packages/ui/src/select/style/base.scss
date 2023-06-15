@@ -1,0 +1,26 @@
+.mdc-select {
+  color: unset;
+  min-width: 210px;
+  .field {
+    cursor: default;
+    outline: none;
+  }
+  .select {
+    position: relative;
+  }
+  .field,
+  .select {
+    min-width: inherit;
+  }
+}
+
+.mdc-select {
+  display: inline-flex;
+  .label {
+    width: 100%;
+  }
+}
+
+.mdc-select[disabled] {
+  pointer-events: none;
+}

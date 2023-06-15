@@ -142,8 +142,6 @@ function OpenCodeSandbox(props: { fileList: FileListMap[]; codeSandboxPacakgeCon
           content: `
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'antd/dist/antd.css';
-import 'react-antd-business-components/dist/style.css';
 import App from './${AppName}';
 
 ReactDOM.render(

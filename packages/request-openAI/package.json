@@ -17,6 +17,10 @@
     "email": "cieldon32@gmail.com"
   },
   "files": [
+    "lib/request-open-ai.cjs.js",
+    "lib/request-open-ai.esm.js",
+    "lib/request-open-ai.umd.js",
+    "lib/index.d.ts",
     "README.md"
   ],
   "repository": {

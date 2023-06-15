@@ -3,22 +3,26 @@
 const path = require('path');
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const { version: componentVersion } = require(path.relative(__dirname, '../packages/components/package.json'));
-
+const { version: componentVersion } = require(path.relative(__dirname, '../packages/ui/package.json'));
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+
+  // Set the production url of your site here
+  url: 'https://your-docusaurus-test-site.com',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'facebook', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
+
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -57,6 +61,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Replace with your project's social card
+      image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'My Site',
         logo: {
@@ -65,8 +71,8 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            type: 'docSidebar',
+            sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Tutorial',
           },
@@ -128,34 +134,36 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-  plugins: [
-    require.resolve('./plugins/mdx'),
-    require.resolve('./plugins/alias'),
-    '@docusaurus/plugin-ideal-image',
-    [
-      "docusaurus-plugin-less",
-      {
-        lessOptions: {
-          javascriptEnabled: true,
+    plugins: [
+      require.resolve('./plugins/mdx'),
+      require.resolve('./plugins/alias'),
+      '@docusaurus/plugin-ideal-image',
+      [
+        "docusaurus-plugin-less",
+        {
+          lessOptions: {
+            javascriptEnabled: true,
+          }
         }
-      }
+      ],
     ],
-  ],
-  customFields: {
-    codeSandboxPacakgeConfig: {
-      dependencies: {
-        react: '^17.0.2',
-        'react-dom': '^17.0.2',
-        antd: '4.21.3',
-        classnames: '2.3.1',
-        '@hm/components': componentVersion,
-      },
-      devDependencies: {
-        less: '^4.1.3',
-        'less-loader': '^7.3.0',
+    customFields: {
+      codeSandboxPacakgeConfig: {
+        dependencies: {
+          "react": "^17.X",
+          "react-dom": "^17.X",
+          "classnames": "^2.3.2",
+          '@huameow/ui': componentVersion,
+        },
+        devDependencies: {
+          less: '^4.1.3',
+          'less-loader': '^7.3.0',
+        },
       },
     },
-  }
+    stylesheets: [
+      'https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined'
+    ]
 };
 
 module.exports = config;

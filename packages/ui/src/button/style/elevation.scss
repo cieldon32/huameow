@@ -1,0 +1,23 @@
+// @import './base.scss';
+// @import './elevation.scss';
+
+.mdc-button--elevation {
+  --md-elevation-level: var(--_container-elevation);
+  --md-elevation-shadow-color: var(--_container-shadow-color);
+  .mdc-elevation {
+    transition-duration: 0.28s;
+  }
+
+  &:focus {
+    --md-elevation-level: var(--_focus-container-elevation);
+  }
+  &:hover {
+    --md-elevation-level: var(--_hover-container-elevation);
+  }
+  &:active {
+    --md-elevation-level: var(--_pressed-container-elevation);
+  }
+  &:disabled {
+    --md-elevation-level: var(--_disabled-container-elevation);
+  }
+}

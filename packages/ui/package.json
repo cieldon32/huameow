@@ -10,11 +10,10 @@
     "build:type": "tsc -p ./tsconfig.type.json"
   },
   "dependencies": {
-
+    "classnames": "^2.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
-    "classnames": "^2.3.2",
     "cssnano": "^5.1.15",
     "postcss-import": "^15.1.0",
     "rollup-plugin-sass-variables": "^0.1.1"
@@ -25,6 +24,9 @@
     "email": "cieldon32@gmail.com"
   },
   "files": [
+    "lib/index.cjs.js",
+    "lib/index.esm.js",
+    "lib/index.d.ts",
     "README.md"
   ],
   "repository": {

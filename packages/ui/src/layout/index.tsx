@@ -1,16 +1,19 @@
+import { forwardRef } from 'react';
 import classnames from 'classnames';
 // import {is, difference} from 'ramda';
 import {Nav} from '@/nav';
 import {CSS_CLASSES} from './constants';
+import {LayoutProps} from './interface';
 import './style/index.scss';
 
-export const Layout = ({
+
+export const Layout = forwardRef(({
   config: {navs},
   dir = 'row',
   active,
   className,
   children
-}: any) => {
+}: LayoutProps, ref: any) => {
   const classNames = classnames(CSS_CLASSES.ROOT, className, {
     [CSS_CLASSES.COLUMN]: dir === 'column',
     [CSS_CLASSES.ROW]: dir === 'row',
@@ -20,7 +23,7 @@ export const Layout = ({
   // const childs = difference(list, slots);
   // const nav = slots.filter((child: any) => child.props.slot === 'nav');
   return (
-    <div className={classNames}>
+    <div className={classNames} ref={ref}>
       <header>
         <div>logo</div>
         <Nav>
@@ -42,4 +45,4 @@ export const Layout = ({
       </section>
     </div>
   )
-}
+})

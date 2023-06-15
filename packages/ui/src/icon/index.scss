@@ -1,0 +1,31 @@
+.mdc-icon {
+  --_color: var(--md-icon-color, inherit);
+  --_font: var(--md-icon-font, 'Material Symbols Outlined');
+  --_font-variation-settings: var(--md-icon-font-variation-settings, inherit);
+  --_size: var(--md-icon-size, 24px);
+  --_weight: var(--md-icon-weight, 400);
+  word-wrap: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--_color);
+  display: inline-flex;
+  font-family: var(--_font);
+  font-size: var(--_size);
+  font-style: normal;
+  font-variation-settings: var(--_font-variation-settings);
+  font-weight: var(--_weight);
+  letter-spacing: normal;
+  line-height: 1;
+  overflow: hidden;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  span ::slotted(svg) {
+    fill: currentColor;
+  }
+  span ::slotted(*) {
+    height: var(--_size);
+    width: var(--_size);
+  }
+}
+

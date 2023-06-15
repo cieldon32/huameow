@@ -21,7 +21,7 @@ import { DynamicColor } from './dynamic_color.js';
  * If there is no preference, the tones at standard contrast are examined, and
  * the polarity of those is attempted to be maintained.
  */
-export type TonePolarity = 'darker' | 'lighter' | 'no-preference';
+export declare type TonePolarity = 'darker' | 'lighter' | 'no-preference';
 /**
  * Documents a constraint between two DynamicColors, in which their tones must
  * have a certain distance from each other.

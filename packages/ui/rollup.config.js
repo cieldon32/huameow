@@ -27,9 +27,7 @@ const formats = {
     globals: {
       'react': 'React',
       'react-dom': 'ReactDOM',
-      'antd': 'antd',
       'moment': 'moment',
-      '@ant-design/icons': 'icons'
     },
   },
   esm: {
@@ -47,9 +45,7 @@ const formats = {
     globals: {
       'react': 'React',
       'react-dom': 'ReactDOM',
-      'antd': 'antd',
       'moment': 'moment',
-      '@ant-design/icons': 'icons'
     },
   },
 };
@@ -62,9 +58,7 @@ const config = {
     'react',
     'react-dom',
     'react-router-dom',
-    'antd',
     'moment',
-    '@ant-design/icons',
   ],
   plugins: [
     clear({

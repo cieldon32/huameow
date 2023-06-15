@@ -1,0 +1,86 @@
+
+.mdc-badge {
+  --_color: var(--md-badge-color, var(--md-sys-color-error, #b3261e));
+  --_large-color: var(
+    --md-badge-large-color,
+    var(--md-sys-color-error, #b3261e)
+  );
+  --_large-label-text-color: var(
+    --md-badge-large-label-text-color,
+    var(--md-sys-color-on-error, #fff)
+  );
+  --_large-label-text-type: var(
+    --md-badge-large-label-text-type,
+    var(
+      --md-sys-typescale-label-small,
+      500 0.688rem/1rem var(--md-ref-typeface-plain, Roboto)
+    )
+  );
+  --_large-shape: var(--md-badge-large-shape, 9999px);
+  --_large-size: var(--md-badge-large-size, 16px);
+  --_shape: var(--md-badge-shape, 9999px);
+  --_size: var(--md-badge-size, 6px);
+  -webkit-margin-start: 6px;
+  -webkit-margin-before: 4px;
+  background-color: var(--_color);
+  border-radius: var(--_shape);
+  height: var(--_size);
+  inset-block-start: 0;
+  inset-inline-start: 50%;
+  margin-block-start: 4px;
+  margin-inline-start: 6px;
+  position: absolute;
+  &:not(.md3-badge--large) {
+    width: var(--_size);
+  }
+  &.top-right{
+    inset-block-start: -50%;
+    inset-inline-start: 100%;
+  }
+  &.bottom-right{
+    inset-block-start: 50%;
+    inset-inline-start: 100%;
+  }
+  &.top-left{
+    inset-block-start: -50%;
+    inset-inline-start: 0%;
+
+  }
+  &.bottom-left{
+    inset-block-start: 50%;
+    inset-inline-start: 0%;
+  }
+  &.top-center{
+    inset-block-start: -50%;
+    inset-inline-start: 50%;
+  }
+  &.bottom-center{
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+  }
+  &.center{
+    inset-block-start: 0%;
+    inset-inline-start: 50%
+  }
+  .value {
+    font: var(--_large-label-text-type);
+  }
+  &.large {
+    -webkit-margin-start: 2px;
+    -webkit-margin-before: 1px;
+    background-color: var(--_large-color);
+    border-radius: var(--_large-shape);
+    color: var(--_large-label-text-color);
+    display: flex;
+    flex-direction: column;
+    height: var(--_large-size);
+    justify-content: center;
+    margin-block-start: 1px;
+    margin-inline-start: 2px;
+    min-width: var(--_large-size);
+    .value {
+      padding: 0 4px;
+      margin: 0;
+    }
+  }
+}

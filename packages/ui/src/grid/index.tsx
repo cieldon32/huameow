@@ -1,7 +1,8 @@
+import type{BaseCompaonentProps} from '@/base/default.interface';
 import {CSS_CLASSES} from './constants';
 import './style/index.scss';
 
-export const Grid = ({children}: any) => {
+export const Grid = ({children}: BaseCompaonentProps) => {
   return (
     <div className={CSS_CLASSES.ROOT}>
       {children}
@@ -9,10 +10,10 @@ export const Grid = ({children}: any) => {
   )
 }
 
-Grid.Row = ({children}: any) => (
+Grid.Row = ({children}: BaseCompaonentProps) => (
   <div className={CSS_CLASSES.ROW}>{children}</div>
 )
 
-Grid.Cell = ({children}: any) => (
+Grid.Cell = ({children}: BaseCompaonentProps) => (
   <div className={CSS_CLASSES.CELL}>{children}</div>
 )

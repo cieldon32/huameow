@@ -1,4 +1,5 @@
 import classnames from 'classnames';
+import type{BaseCompaonentProps} from '@/base/default.interface';
 import {Tab} from './tab';
 import {CSS_CLASSES} from './constants';
 import './style/index.scss';
@@ -7,7 +8,7 @@ export const Nav = ({
   className,
   children,
   ...props
-}: any) => {
+}: BaseCompaonentProps) => {
   const classNames = classnames(CSS_CLASSES.ROOT, className, {
 
   });

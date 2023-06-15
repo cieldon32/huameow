@@ -6,6 +6,7 @@
     /* Basic Options */
     "target": "esnext",
     "module": "esnext",
+    "lib": ["es6", "dom"],
     "skipLibCheck": true,
     "declaration": true,
     "declarationMap": false,

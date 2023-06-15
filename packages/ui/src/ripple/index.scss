@@ -1,0 +1,80 @@
+.mdc-ripple {
+  --_focus-color: var(
+    --md-ripple-focus-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_focus-opacity: var(--md-ripple-focus-opacity, 0.12);
+  --_hover-color: var(
+    --md-ripple-hover-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_hover-opacity: var(--md-ripple-hover-opacity, 0.08);
+  --_pressed-color: var(
+    --md-ripple-pressed-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_pressed-opacity: var(--md-ripple-pressed-opacity, 0.12);
+  --_shape: var(--md-ripple-shape, 0px);
+    display: flex;
+  &[disabled] {
+    opacity: 0;
+  }
+  .surface,
+  & {
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+  }
+  .surface {
+    -webkit-tap-highlight-color: transparent;
+    border-radius: var(--_shape);
+    outline: none;
+    will-change: transform;
+  }
+  .surface:after,
+  .surface:before {
+    content: '';
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+  }
+  .surface:before {
+    background-color: var(--_hover-color);
+    inset: 0;
+    transition: opacity 15ms linear, background-color 15ms linear;
+  }
+  .surface:after {
+    background: radial-gradient(
+      closest-side,
+      var(--_pressed-color) max(100% - 70px, 65%),
+      transparent 100%
+    );
+    transform-origin: center center;
+    transition: opacity 375ms linear;
+  }
+  .hovered:before {
+    background-color: var(--_hover-color);
+    opacity: var(--_hover-opacity);
+  }
+  .focused:before {
+    background-color: var(--_focus-color);
+    opacity: var(--_focus-opacity);
+    transition-duration: 75ms;
+  }
+  .pressed:after {
+    opacity: var(--_pressed-opacity);
+    transition-duration: 105ms;
+  }
+  .unbounded {
+    --_shape: var(--md-ripple-shape, 9999px);
+  }
+
+
+}
+
+@media screen and (forced-colors: active) {
+  .mdc-ripple {
+    display: none;
+  }
+}

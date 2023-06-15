@@ -1,0 +1,62 @@
+.mdc-elevation {
+  --_level: var(--md-elevation-level, 0);
+  --_shadow-color: var(
+    --md-elevation-shadow-color,
+    var(--md-sys-color-shadow, #000)
+  );
+  display: flex;
+  pointer-events: none;
+  .shadow,
+  .shadow:after,
+  .shadow:before,
+  & {
+    border-radius: inherit;
+    inset: 0;
+    position: absolute;
+    transition-duration: inherit;
+    transition-timing-function: inherit;
+  }
+  .shadow:after,
+  .shadow:before {
+    content: '';
+    transition-property: box-shadow, opacity;
+  }
+  .shadow:before {
+    box-shadow: 0
+      calc(
+        1px *
+          (
+            clamp(0, var(--_level), 1) + clamp(0, var(--_level) - 3, 1) +
+              clamp(0, var(--_level) - 4, 1) * 2
+          )
+      )
+      calc(
+        1px *
+          (
+            2 * clamp(0, var(--_level), 1) + clamp(0, var(--_level) - 2, 1) +
+              clamp(0, var(--_level) - 4, 1)
+          )
+      )
+      0 var(--_shadow-color);
+    opacity: 0.3;
+  }
+  .shadow:after {
+    box-shadow: 0
+      calc(
+        1px *
+          (
+            clamp(0, var(--_level), 1) + clamp(0, var(--_level) - 1, 1) +
+              clamp(0, var(--_level) - 2, 3) * 2
+          )
+      )
+      calc(
+        1px *
+          (clamp(0, var(--_level), 2) * 3 + clamp(0, var(--_level) - 2, 3) * 2)
+      )
+      calc(
+        1px * (clamp(0, var(--_level), 4) + 2 * clamp(0, var(--_level) - 4, 1))
+      )
+      var(--_shadow-color);
+    opacity: 0.15;
+  }
+}

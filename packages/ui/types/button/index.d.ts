@@ -1,3 +1,3 @@
-import './index.scss';
-export { default as SegmentedButton } from './segmentedButton';
-export declare const Button: ({ type, className, href, children }: any) => JSX.Element;
+import { ButtonComponent } from './interface';
+import './style/index.scss';
+export declare const Button: ButtonComponent;

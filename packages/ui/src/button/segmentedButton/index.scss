@@ -1,0 +1,388 @@
+.mdc-outlined-segmented-button {
+  --_container-height: var(--md-segmented-button-container-height, 40px);
+  --_disabled-icon-color: var(
+    --md-segmented-button-disabled-icon-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_disabled-icon-opacity: var(
+    --md-segmented-button-disabled-icon-opacity,
+    0.38
+  );
+  --_disabled-label-text-color: var(
+    --md-segmented-button-disabled-label-text-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_disabled-label-text-opacity: var(
+    --md-segmented-button-disabled-label-text-opacity,
+    0.38
+  );
+  --_disabled-outline-color: var(
+    --md-segmented-button-disabled-outline-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_disabled-outline-opacity: var(
+    --md-segmented-button-disabled-outline-opacity,
+    0.12
+  );
+  --_focus-state-layer-opacity: var(
+    --md-segmented-button-focus-state-layer-opacity,
+    0.12
+  );
+  --_hover-state-layer-opacity: var(
+    --md-segmented-button-hover-state-layer-opacity,
+    0.08
+  );
+  --_label-text-type: var(
+    --md-segmented-button-label-text-type,
+    var(
+      --md-sys-typescale-label-large,
+      500 0.875rem/1.25rem var(--md-ref-typeface-plain, Roboto)
+    )
+  );
+  --_outline-color: var(
+    --md-segmented-button-outline-color,
+    var(--md-sys-color-outline, #79747e)
+  );
+  --_outline-width: var(--md-segmented-button-outline-width, 1px);
+  --_pressed-state-layer-opacity: var(
+    --md-segmented-button-pressed-state-layer-opacity,
+    0.12
+  );
+  --_selected-container-color: var(
+    --md-segmented-button-selected-container-color,
+    var(--md-sys-color-secondary-container, #e8def8)
+  );
+  --_selected-focus-icon-color: var(
+    --md-segmented-button-selected-focus-icon-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-focus-label-text-color: var(
+    --md-segmented-button-selected-focus-label-text-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-focus-state-layer-color: var(
+    --md-segmented-button-selected-focus-state-layer-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-hover-icon-color: var(
+    --md-segmented-button-selected-hover-icon-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-hover-label-text-color: var(
+    --md-segmented-button-selected-hover-label-text-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-hover-state-layer-color: var(
+    --md-segmented-button-selected-hover-state-layer-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-label-text-color: var(
+    --md-segmented-button-selected-label-text-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-pressed-icon-color: var(
+    --md-segmented-button-selected-pressed-icon-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-pressed-label-text-color: var(
+    --md-segmented-button-selected-pressed-label-text-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-pressed-state-layer-color: var(
+    --md-segmented-button-selected-pressed-state-layer-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_selected-with-icon-icon-color: var(
+    --md-segmented-button-selected-with-icon-icon-color,
+    var(--md-sys-color-on-secondary-container, #1d192b)
+  );
+  --_shape: var(--md-segmented-button-shape, 9999px);
+  --_unselected-focus-icon-color: var(
+    --md-segmented-button-unselected-focus-icon-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-focus-label-text-color: var(
+    --md-segmented-button-unselected-focus-label-text-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-focus-state-layer-color: var(
+    --md-segmented-button-unselected-focus-state-layer-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-hover-icon-color: var(
+    --md-segmented-button-unselected-hover-icon-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-hover-label-text-color: var(
+    --md-segmented-button-unselected-hover-label-text-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-hover-state-layer-color: var(
+    --md-segmented-button-unselected-hover-state-layer-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-label-text-color: var(
+    --md-segmented-button-unselected-label-text-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-pressed-icon-color: var(
+    --md-segmented-button-unselected-pressed-icon-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-pressed-label-text-color: var(
+    --md-segmented-button-unselected-pressed-label-text-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-pressed-state-layer-color: var(
+    --md-segmented-button-unselected-pressed-state-layer-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_unselected-with-icon-icon-color: var(
+    --md-segmented-button-unselected-with-icon-icon-color,
+    var(--md-sys-color-on-surface, #1d1b20)
+  );
+  --_with-icon-icon-size: var(--md-segmented-button-with-icon-icon-size, 18px);
+  --_spacing-leading: var(--md-segmented-button-spacing-leading, 12px);
+  --_spacing-trailing: var(--md-segmented-button-spacing-trailing, 12px);
+  .md3-segmented-button__outline {
+    border-radius: inherit;
+    border-style: solid;
+    border-width: 1px;
+    inset: 0 -0.5px;
+    pointer-events: none;
+    position: absolute;
+  }
+}
+
+@keyframes md3-segmented-button-checkmark-selection-draw-in {
+  0% {
+    stroke-dashoffset: 29.7833385;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes md3-segmented-button-simple-fade-out {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes md3-segmented-button-simple-fade-in {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.mdc-outlined-segmented-button {
+
+    -webkit-padding-start: var(--_spacing-leading);
+    -webkit-padding-end: var(--_spacing-trailing);
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: inherit;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    outline: none;
+    padding-inline-end: var(--_spacing-trailing);
+    padding-inline-start: var(--_spacing-leading);
+    position: relative;
+    vertical-align: middle;
+  .md3-segmented-button__outline {
+    border-color: var(--_outline-color);
+  }
+  &:disabled .md3-segmented-button__outline {
+    border-color: var(--_disabled-outline-color);
+  }
+  .md3-segmented-button__checkmark,
+  .md3-segmented-button__graphic,
+  .md3-segmented-button__icon,
+  .md3-segmented-button__icon ::slotted([slot='icon']) {
+    font-size: var(--_with-icon-icon-size);
+    height: var(--_with-icon-icon-size);
+    width: var(--_with-icon-icon-size);
+  }
+  &.md3-segmented-button--selected.md3-segmented-button--with-label.md3-segmented-button--with-checkmark
+    .md3-segmented-button__graphic,
+  &.md3-segmented-button--selected.md3-segmented-button--without-label.md3-segmented-button--with-checkmark
+    .md3-segmented-button__graphic,
+  &.md3-segmented-button--with-icon.md3-segmented-button--with-label
+    .md3-segmented-button__graphic {
+    width: calc(var(--_with-icon-icon-size) + 8px);
+  }
+  .md3-segmented-button .md3-segmented-button__label-text {
+    font: var(--_label-text-type);
+  }
+  &.md3-segmented-button--selected:enabled
+    .md3-segmented-button__label-text {
+    color: var(--_selected-label-text-color);
+  }
+  &.md3-segmented-button--selected:enabled:hover
+    .md3-segmented-button__label-text {
+    color: var(--_selected-hover-label-text-color);
+  }
+  &.md3-segmented-button--selected:enabled:focus
+    .md3-segmented-button__label-text {
+    color: var(--_selected-focus-label-text-color);
+  }
+  &.md3-segmented-button--selected:enabled:active
+    .md3-segmented-button__label-text {
+    color: var(--_selected-pressed-label-text-color);
+  }
+  &.md3-segmented-button--unselected:enabled
+    .md3-segmented-button__label-text {
+    color: var(--_unselected-label-text-color);
+  }
+  &.md3-segmented-button--unselected:enabled:hover
+    .md3-segmented-button__label-text {
+    color: var(--_unselected-hover-label-text-color);
+  }
+  &.md3-segmented-button--unselected:enabled:focus
+    .md3-segmented-button__label-text {
+    color: var(--_unselected-focus-label-text-color);
+  }
+  &.md3-segmented-button--unselected:enabled:active
+    .md3-segmented-button__label-text {
+    color: var(--_unselected-pressed-label-text-color);
+  }
+  &.md3-segmented-button:disabled .md3-segmented-button__label-text {
+    color: var(--_disabled-label-text-color);
+  }
+  &.md3-segmented-button--unselected {
+    --md-ripple-hover-color: var(--_unselected-hover-state-layer-color);
+    --md-ripple-hover-opacity: var(--_hover-state-layer-opacity);
+    --md-ripple-focus-color: var(--_unselected-focus-state-layer-color);
+    --md-ripple-focus-opacity: var(--_focus-state-layer-opacity);
+    --md-ripple-pressed-color: var(--_unselected-pressed-state-layer-color);
+    --md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity);
+  }
+  &.md3-segmented-button--unselected .md3-segmented-button__icon {
+    color: var(--_unselected-with-icon-icon-color);
+  }
+  &.md3-segmented-button--unselected:hover .md3-segmented-button__icon {
+    color: var(--_unselected-hover-icon-color);
+  }
+  &.md3-segmented-button--unselected:focus .md3-segmented-button__icon {
+    color: var(--_unselected-focus-icon-color);
+  }
+  &.md3-segmented-button--unselected:active .md3-segmented-button__icon {
+    color: var(--_unselected-pressed-icon-color);
+  }
+  &.md3-segmented-button--unselected:disabled .md3-segmented-button__icon {
+    color: var(--_disabled-icon-color);
+  }
+  &.md3-segmented-button--selected {
+    --md-ripple-hover-color: var(--_selected-hover-state-layer-color);
+    --md-ripple-hover-opacity: var(--_hover-state-layer-opacity);
+    --md-ripple-focus-color: var(--_selected-focus-state-layer-color);
+    --md-ripple-focus-opacity: var(--_focus-state-layer-opacity);
+    --md-ripple-pressed-color: var(--_selected-pressed-state-layer-color);
+    --md-ripple-pressed-opacity: var(--_pressed-state-layer-opacity);
+    background-color: var(--_selected-container-color);
+  }
+  &.md3-segmented-button--selected .md3-segmented-button__icon {
+    color: var(--_selected-with-icon-icon-color);
+  }
+  &.md3-segmented-button--selected .md3-segmented-button__checkmark-path {
+    stroke: var(--_selected-with-icon-icon-color);
+  }
+  &.md3-segmented-button--selected:hover .md3-segmented-button__checkmark-path {
+    stroke: var(--_selected-hover-icon-color);
+  }
+  &.md3-segmented-button--selected:focus .md3-segmented-button__checkmark-path {
+    stroke: var(--_selected-focus-icon-color);
+  }
+  &.md3-segmented-button--selected:active .md3-segmented-button__checkmark-path {
+    stroke: var(--_selected-pressed-icon-color);
+  }
+  &.md3-segmented-button--selected:disabled .md3-segmented-button__checkmark-path {
+    stroke: var(--_disabled-icon-color);
+  }
+  .md3-segmented-button:enabled {
+    cursor: pointer;
+  }
+  .md3-segmented-button__focus-ring {
+    z-index: 1;
+  }
+  .md3-segmented-button__ripple {
+    border-radius: inherit;
+    z-index: 0;
+  }
+  .md3-segmented-button__touch {
+    height: 48px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+  .md3-segmented-button__graphic,
+  .md3-segmented-button__leading {
+    align-items: center;
+    display: inline-flex;
+    justify-content: flex-start;
+  }
+  .md3-segmented-button__graphic {
+    overflow: hidden;
+    position: relative;
+    transition: width 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &.md3-segmented-button--selected.md3-segmented-button--without-checkmark
+    .md3-segmented-button__graphic,
+  &.md3-segmented-button--unselected.md3-segmented-button--with-label
+    .md3-segmented-button__graphic,
+  &.md3-segmented-button--unselected.md3-segmented-button--without-label
+    .md3-segmented-button__graphic {
+    width: 0;
+  }
+  &.md3-segmented-button--selected.md3-segmented-button--with-label
+    .md3-segmented-button__icon,
+  &.md3-segmented-button--unselected .md3-segmented-button__checkmark {
+    opacity: 0;
+  }
+  &.md3-segmented-button--with-label .md3-segmented-button__checkmark {
+    display: inline-flex;
+    position: absolute;
+  }
+  .md3-segmented-button__checkmark-path {
+    stroke-width: 2px;
+    stroke-dasharray: 29.7833385;
+  }
+  &.md3-segmented-button--selecting .md3-segmented-button__checkmark-path {
+    stroke-dashoffset: 29.7833385;
+    animation: md3-segmented-button-checkmark-selection-draw-in;
+    animation-delay: 50ms;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &.md3-segmented-button--selecting.md3-segmented-button--with-label
+    .md3-segmented-button__icon {
+    animation: md3-segmented-button-simple-fade-out;
+    animation-duration: 75ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+  &.md3-segmented-button--deselecting .md3-segmented-button__checkmark {
+    animation: md3-segmented-button-simple-fade-out;
+    animation-duration: 50ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+  &.md3-segmented-button--deselecting.md3-segmented-button--with-label
+    .md3-segmented-button__icon {
+    animation: md3-segmented-button-simple-fade-in;
+    animation-delay: 50ms;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    opacity: 0;
+  }
+}
+
