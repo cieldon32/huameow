@@ -1,5 +1,6 @@
 .mdc-field {
   display: inline-flex;
+  width: 100%;
   .field {
     display: flex;
     flex: 1;
@@ -19,12 +20,11 @@
     align-items: center;
     border-radius: inherit;
     display: flex;
-    flex: 1;
-    min-width: min-content;
     overflow: hidden;
     padding-bottom: var(--_container-padding-vertical);
     padding-top: var(--_container-padding-vertical);
     position: relative;
+    width: 100%;
   }
   .resizable .container {
     resize: both;
@@ -51,9 +51,27 @@
     align-items: center;
     justify-content: center;
   }
-  .with-end .end,
-  .with-start .start {
-    min-width: 48px;
+  .start {
+    -webkit-padding-start: max(
+      var(--_container-padding-horizontal),
+      max(var(--_container-shape-start-start), var(--_container-shape-end-start)) +
+        var(--_outline-label-padding)
+    );
+    padding-inline-start: max(
+      var(--_container-padding-horizontal),
+      max(var(--_container-shape-start-start), var(--_container-shape-end-start)) +
+        var(--_outline-label-padding)
+    );
+  }
+  .end {
+    -webkit-padding-end: max(
+      var(--_container-padding-horizontal),
+      max(var(--_container-shape-start-end), var(--_container-shape-end-end))
+    );
+    padding-inline-end: max(
+      var(--_container-padding-horizontal),
+      max(var(--_container-shape-start-end), var(--_container-shape-end-end))
+    );
   }
   .with-start .start {
     -webkit-margin-end: 4px;
@@ -67,6 +85,7 @@
     align-items: stretch;
     align-self: baseline;
     flex: 1;
+
   }
   .content {
     color: var(--_content-color);
@@ -75,12 +94,19 @@
     font: var(--_content-type);
     opacity: 0;
     transition: opacity 83ms cubic-bezier(0.2, 0, 0, 1);
+    .label {
+      display: flex;
+      align-items: center;
+    }
   }
   .focused .content,
   .no-label .content,
   .populated .content {
     opacity: 1;
     transition-delay: 67ms;
+  }
+  &:hover {
+    cursor: pointer;
   }
   &:hover .content {
     color: var(--_hover-content-color);
@@ -228,5 +254,4 @@
   .error.focus .supporting-text {
     color: var(--_error-focus-supporting-text-color);
   }
-
 }

@@ -1,8 +1,7 @@
 .mdc-select {
   color: unset;
-  min-width: 210px;
   .field {
-    cursor: default;
+    cursor: pointer;
     outline: none;
   }
   .select {
@@ -10,7 +9,10 @@
   }
   .field,
   .select {
-    min-width: inherit;
+    width: 100%;
+  }
+  .no-label .label {
+    display: flex;
   }
 }
 
@@ -18,6 +20,10 @@
   display: inline-flex;
   .label {
     width: 100%;
+  }
+  .content{
+    line-height: 24px;
+    height: 24px;
   }
 }
 

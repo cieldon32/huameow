@@ -6,6 +6,9 @@ export interface ButtonProps extends BaseCompaonentProps, ACompaonentProps {
     variant?: Variant;
     type?: 'link' | 'icon' | 'segment';
     multiple?: boolean;
+    active?: boolean;
+    name?: string;
+    onChange?: Function;
 }
 export interface ButtonComponent extends ForwardComponent<any, any> {
     Item?: typeof SegmentedButton;

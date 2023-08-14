@@ -11,7 +11,7 @@ export interface BaseCompaonentProps {
   disabled?: boolean;
   loading?: boolean;
   parent?: any;
-  theme?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'success';
+  // state?: 'primary' | 'secondary' | 'tertiary' | 'error' | 'success';
   size?: 's' | 'm' | 'l';
   direction?: 'row' | 'column';
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
@@ -27,9 +27,9 @@ export interface ACompaonentProps {
 export interface ForwardComponent<P, H>
   extends React.ForwardRefExoticComponent<P & React.RefAttributes<H>> {}
 
-export type Variant = 'filled' | 'elevated' | 'tonal' | 'outlined';
+export type Variant = 'filled' | 'elevated' | 'tonal' | 'outlined' | 'transparent';
 
-export type Position = 'top-right' | 'bottom-right' | 'top-left' | 'bottom-left' | 'top-center' | 'bottom-center' | 'center';
+export type Position = 'top-right' | 'bottom-right' | 'top-left' | 'bottom-left' | 'top-center' | 'bottom-center' | 'center' | 'top' | 'bottom' | 'left' | 'right';
 
 export interface Ruler {
   required?: boolean;

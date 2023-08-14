@@ -1,3 +1,3 @@
-import type { BaseCompaonentProps } from '@/base/default.interface';
+import { FABProps } from './interface';
 import './index.scss';
-export declare const FAB: ({ theme, className, children }: BaseCompaonentProps) => import("react/jsx-runtime").JSX.Element;
+export declare const FAB: ({ state, className, children }: FABProps) => import("react/jsx-runtime").JSX.Element;

@@ -9,7 +9,6 @@ export function useSlot(children: any) {
       const type = child.type as any;
       const props = child.props;
       const name = type.name || type.displayName;
-      console.log('type.name', child)
       if(name === 'Slot') {
         const slot = type.getSlot(child.props);
         result[props.name] = slot.next().value;

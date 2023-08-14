@@ -1,0 +1,54 @@
+@import '../base/style.scss';
+
+.mdc-message{
+  flex-direction: column;
+  justify-content: flex-start;
+  .container{
+    @include box-shadow;
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 5px;
+    min-block-size: 40px;
+    min-inline-size: 100px;
+    padding-block-end: 0;
+    padding-block-start: 0;
+    position: relative;
+    .content{
+      line-height: 30px;
+      margin-block-end: 5px;
+      margin-block-start: 5px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      overflow-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-wrap;
+      .mdc-icon{
+        max-width: 30px;
+        flex: 1;
+      }
+      span{
+        display: inline-block;
+        flex: 2;
+        padding-left: 6px;
+      }
+    }
+  }
+  &.info .container{
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+  }
+  &.success .container{
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+  }
+  &.warn .container{
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+  }
+  &.error .container{
+    background-color: var(--md-sys-color-error-container);
+    color: var(--md-sys-color-on-error-container);
+  }
+}

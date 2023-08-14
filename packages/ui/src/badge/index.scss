@@ -25,42 +25,37 @@
   background-color: var(--_color);
   border-radius: var(--_shape);
   height: var(--_size);
-  inset-block-start: 0;
-  inset-inline-start: 50%;
-  margin-block-start: 4px;
-  margin-inline-start: 6px;
   position: absolute;
   &:not(.md3-badge--large) {
     width: var(--_size);
   }
   &.top-right{
-    inset-block-start: -50%;
-    inset-inline-start: 100%;
+    top: 0;
+    right: 0;
   }
   &.bottom-right{
-    inset-block-start: 50%;
-    inset-inline-start: 100%;
+    bottom: 0;
+    right: 0;
   }
   &.top-left{
-    inset-block-start: -50%;
-    inset-inline-start: 0%;
-
+    top: 0;
+    left: 0;
   }
   &.bottom-left{
-    inset-block-start: 50%;
-    inset-inline-start: 0%;
+    bottom: 0;
+    left: 0;
   }
   &.top-center{
-    inset-block-start: -50%;
-    inset-inline-start: 50%;
+    top: 0;
+    left: 50%;
   }
   &.bottom-center{
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
+    bottom: 0;
+    left: 50%;
   }
   &.center{
-    inset-block-start: 0%;
-    inset-inline-start: 50%
+    top: 50%;
+    left: 50%;
   }
   .value {
     font: var(--_large-label-text-type);

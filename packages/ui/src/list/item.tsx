@@ -1,6 +1,6 @@
 import { useMemo, useRef } from 'react';
 import classnames from 'classnames';
-import type{BaseCompaonentProps} from '@/base/default.interface';
+import type { BaseCompaonentProps } from '@/base/default.interface';
 import { Ripple } from '@/ripple';
 import { Focus } from '@/focus';
 import { useSlot } from '@/slot';
@@ -20,8 +20,10 @@ export const Item = ({
   const classNames = useMemo(() => {
     return classnames('mdc-list-item list-item', className, {
       ['with-one-line']: !slots['supportingText'],
-      ['with-two-line']: slots['supportingText'] && !slots['multiLineSupportingText'],
-      ['with-three-line']: slots['supportingText'] && slots['multiLineSupportingText'],
+      ['with-two-line']:
+        slots['supportingText'] && !slots['multiLineSupportingText'],
+      ['with-three-line']:
+        slots['supportingText'] && slots['multiLineSupportingText'],
       ['disabled']: disabled,
     });
   }, [slots]);
@@ -32,7 +34,9 @@ export const Item = ({
         <div className="body">
           <span className="label-text">{children}</span>
           {slots['supportingText'] ? (
-            <span className={supportingTextClasses}>{slots['supportingText']}</span>
+            <span className={supportingTextClasses}>
+              {slots['supportingText']}
+            </span>
           ) : null}
         </div>
         <div className="end">

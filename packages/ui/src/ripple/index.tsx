@@ -127,15 +127,17 @@ export const Ripple = ({ round, parent, className }: any) => {
 
   useEffect(() => {
     if (parent.current) {
-      parent.current.onmouseenter = () => {
+      parent.current.onmouseover = () => {
         setHovered(true);
       };
+
       parent.current.onmouseout = () => {
         setHovered(false);
         if (state !== State.INACTIVE) {
           endPressAnimation();
         }
       };
+
       parent.current.onmousedown = () => {
         setState(State.WAITING_FOR_CLICK);
         startPressAnimation();

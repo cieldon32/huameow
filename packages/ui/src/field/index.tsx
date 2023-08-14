@@ -1,9 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { ReactElement, useState, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import { useSlot } from '@/slot';
 import { useFocus } from '@/hooks/useFocus';
 import { CSS_CLASSES } from './constants';
-import { ReactElement, useState } from 'react';
 import './style/index.scss';
 
 export const Field = ({
@@ -15,6 +14,8 @@ export const Field = ({
   populated,
   required,
   children,
+  onFocus,
+  onBlur,
   ...props
 }: any) => {
   const floatingLabelEl = useRef(null);
@@ -22,11 +23,13 @@ export const Field = ({
   const [isAnimating, setIsAnimating] = useState(false);
   const { focused, doBlur, doFocus } = useFocus();
   const slots = useSlot(children);
+
   const isFilled = variant === 'filled';
   const isOutlined = variant === 'outlined';
   const classNames = classnames(CSS_CLASSES.ROOT, className, {
     [CSS_CLASSES.FILLED]: isFilled,
     [CSS_CLASSES.OUTLINED]: isOutlined,
+    ['mdc-filled-field transparent']: variant === 'transparent',
   });
 
   const field = classnames('field', {
@@ -36,7 +39,7 @@ export const Field = ({
     [CSS_CLASSES.END]: slots.end,
     [CSS_CLASSES.POPULATED]: populated,
     [CSS_CLASSES.NO_LABEL]: !label,
-    ['focused']: focused,
+    ['focused']: focused && !disabled,
     ['required']: required,
   });
   function renderFilled() {
@@ -56,7 +59,7 @@ export const Field = ({
         <div className="outline-notch">
           <div className="outline-panel-inactive"></div>
           <div className="outline-panel-active"></div>
-          <div className="outline-label">${floatingLabel}</div>
+          <div className="outline-label">{floatingLabel}</div>
         </div>
         <div className="outline-end"></div>
       </div>
@@ -72,9 +75,9 @@ export const Field = ({
       visible = !focused && !populated && !isAnimating;
     }
     const labelClassnames = classnames('label', {
-      hidden: !visible,
-      floating: isFloating,
-      resting: !isFloating,
+      ['hidden']: !visible,
+      ['floating']: isFloating,
+      ['resting']: !isFloating,
     });
     const requiredTect = required ? '*' : '';
     const animateStyle = getAnimateStyle();
@@ -129,6 +132,16 @@ export const Field = ({
     setIsAnimating(true);
   }
 
+  function handelFocus() {
+    doFocus();
+    onFocus?.();
+  }
+
+  function handelBlur(e: any) {
+    doBlur();
+    onBlur?.(e);
+  }
+
   useEffect(() => {
     animateLabelIfNeeded({
       wasFocused: focused,
@@ -141,21 +154,28 @@ export const Field = ({
       className={classNames}
       {...props}
       tabIndex={0}
-      onBlur={doBlur}
-      onFocus={doFocus}
+      onBlur={handelBlur}
+      onFocus={handelFocus}
     >
       <div className={field}>
         <div className="container-overflow">
           {isOutlined ? renderOutlined(floatingLabel) : null}
           {isFilled ? renderFilled() : null}
           <div className="container">
-            <div className="start">{slots.start}</div>
+            {
+              slots.start ? (
+                <div className="start">{slots.start}</div>
+              ) : null
+            }
+
             <div className="middle">
               {renderLabel(false, restingLabelEl)}
               {isOutlined ? null : floatingLabel}
               <div className="content">{slots.children}</div>
             </div>
-            <div className="end">{slots.end}</div>
+            {
+              slots.end ? (<div className="end">{slots.end}</div>) : null
+            }
           </div>
         </div>
         <div className="supporting-text">

@@ -1,9 +1,8 @@
-:root {
+
+.mdc-button {
   --md-filled-button-container-shape-start-start: 12px;
   --md-filled-button-container-shape: 8px;
   --md-sys-color-success: green;
-}
-.mdc-button {
   --_hover-label-text-color: var(--md-sys-color-primary, #6750a4);
   -webkit-tap-highlight-color: transparent;
   --md-ripple-hover-color: var(--_hover-state-layer-color);
@@ -43,6 +42,7 @@
     user-select: none;
     vertical-align: middle;
     z-index: 0;
+    overflow: hidden;
   &:before {
     background-color: var(--_container-color);
     border-radius: inherit;
@@ -127,6 +127,8 @@
     inline-size: var(--_with-icon-icon-size);
     position: relative;
     writing-mode: horizontal-tb;
+    align-items: center;
+    justify-content: center;
   }
   &:hover .mdc-icon {
     color: var(--_hover-label-text-color);

@@ -5,10 +5,10 @@
   --md-focus-ring-shape-end-end: var(--_container-shape-end-end);
   --md-focus-ring-shape-end-start: var(--_container-shape-end-start);
   display: inline-flex;
-  height: var(--_container-size);
+  // height: var(--_container-size);
   justify-content: center;
   outline: none;
-  width: var(--_container-size);
+  // width: var(--_container-size);
 }
 .mdc-icon-button[disabled] {
   pointer-events: none;
@@ -32,11 +32,8 @@
   -webkit-user-select: none;
   user-select: none;
   z-index: 0;
-  .icon {
-    --md-icon-size: var(--_icon-size);
-    --md-icon-weight: inherit;
-    height: var(--_icon-size);
-    width: var(--_icon-size);
+  .mdc-badge.top-right{
+
   }
   .mdc-ripple {
     border-end-end-radius: var(--_container-shape-end-end);

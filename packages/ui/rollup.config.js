@@ -78,6 +78,7 @@ const config = {
           includePaths: [
             path.resolve(__dirname, "node_modules"),
           ],
+          exec: true
         }],
         ['less', { javascriptEnabled: true }]
       ],

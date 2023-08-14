@@ -9,18 +9,30 @@ import classnames from 'classnames';
 import { Elevation } from '@/elevation';
 import { useSlot } from '@/slot';
 import { Button } from '@/button';
+import {Icon} from '@/icon';
 import { CSS_CLASSES } from './constants';
-import {DialogProps} from './interface';
+import { DialogProps, DialogComponent } from './interface';
 import './index.scss';
 
-export const Dialog = forwardRef(
+export const Dialog : DialogComponent = forwardRef(
   (
-    { hasFooter, stacked, className, children, transition }: DialogProps,
+    {
+      hasFooter,
+      stacked,
+      className,
+      children,
+      transition = 'grow-down',
+      title,
+      visiable,
+      isMessage = false,
+      width,
+      height,
+    }: DialogProps,
     ref: any,
   ) => {
     const slots = useSlot(children);
     const [dragging, setDragging] = useState(false);
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(visiable);
     const [opening, setOpening] = useState(false);
     const [closing, setClosing] = useState(false);
     const contentElement = useRef(null);
@@ -33,11 +45,12 @@ export const Dialog = forwardRef(
     }, [contentElement.current]);
     const classNames = useMemo(() => {
       return classnames(CSS_CLASSES.ROOT, className, {
+        ['hasMask']: !isMessage,
         ['stacked']: stacked,
         ['scrollable']: isScrollable,
         ['scroll-divider-header']: !isAtScrollTop,
         ['scroll-divider-footer']: !isAtScrollBottom,
-        ['footerHidden']: hasFooter,
+        ['footerHidden']: !hasFooter,
         ['opening']: opening,
         ['closing']: closing,
         ['transition']: transition,
@@ -47,7 +60,6 @@ export const Dialog = forwardRef(
         ['grow-right']: transition === 'grow-right',
         ['shrink']: transition === 'shrink',
         ['grow']: transition === 'grow',
-
       });
     }, [opening]);
 
@@ -82,7 +94,7 @@ export const Dialog = forwardRef(
     }
 
     function doDragEnd(e: PointerEvent) {
-      console.log('doDragEnd', e);
+      console.log('doDragEnd', e)
       setDragging(false);
     }
 
@@ -92,7 +104,6 @@ export const Dialog = forwardRef(
     }
 
     function doClose() {
-      console.log('doClose');
       setOpen(false);
       setOpening(false);
       setClosing(true);
@@ -103,7 +114,6 @@ export const Dialog = forwardRef(
       () => {
         return {
           open() {
-            console.log('open', open);
             doOpen();
           },
           close() {
@@ -116,33 +126,46 @@ export const Dialog = forwardRef(
 
     return (
       <dialog className={classNames} open={open}>
-        <div
-          className={container}
-          onPointerMove={() => doPointerMove}
-          onPointerUp={() => doDragEnd}
-        >
-          <Elevation></Elevation>
-          <header className="header">
-            <slot name="header">
-              <slot name="headline-prefix"></slot>
-              <slot name="headline"></slot>
-              <slot name="headline-suffix"></slot>
-            </slot>
-          </header>
-          <section className="content" ref={contentElement}>
-            {slots['children']}
-          </section>
-          <footer className="footer">
-            {slots['footer']}
-            <Button variant="tonal" onClick={doClose}>
-              取消
-            </Button>
-            <Button variant="filled" onClick={doClose}>
-              确定
-            </Button>
-          </footer>
-        </div>
+
+        {
+          isMessage ? children : (
+            <div
+            className={container}
+            style={{width, height}}
+            onPointerMove={() => doPointerMove}
+            onPointerUp={() => doDragEnd}
+          >
+            <Button type="icon" onClick={doClose} className="close">close</Button>
+            <Elevation></Elevation>
+            {slots['header'] || slots['title'] || title ? (
+              <div className="header">{slots['title'] || title}</div>
+            ) : null}
+
+            <div className="content" ref={contentElement}>
+              {slots['children']}
+            </div>
+            <footer className="footer">
+              {slots['footer']}
+              <Button variant="tonal" onClick={doClose}>
+                取消
+              </Button>
+              <Button variant="filled" onClick={doClose}>
+                确定
+              </Button>
+            </footer>
+          </div>
+          )
+        }
+
+
       </dialog>
     );
   },
 );
+
+Dialog.Container = ({children, type}: any) => (
+  <div className="content">
+  <Icon>{type}</Icon>
+  <span>{children}</span>
+</div>
+)

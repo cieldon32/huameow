@@ -1,25 +1,25 @@
-:root {
+.mdc-layout {
   --mdc-layout-margin-expanded-3: auto;
   --mdc-layout-margin-expanded-2: 200px;
   --mdc-layout-margin-expanded-1: auto;
   --mdc-layout-margin-medium: 32px;
   --mdc-layout-margin-compact: 16px;
-
   --mdc-layout-body-expanded-3: 1040px;
   --mdc-layout-body-expanded-2: auto;
   --mdc-layout-body-expanded-1: 840px;
   --mdc-layout-body-medium: auto;
   --mdc-layout-body-compact: auto;
-}
-
-.mdc-layout{
   position: relative;
   width: 100vh;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  overflow: hidden;
+  background-color: var(--md-sys-color-surface-container-lowest);
 }
 
-.mdc-layout--row{
-  header{
+.mdc-layout--row {
+  header {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -27,14 +27,18 @@
     bottom: 0px;
     height: 72px;
   }
-  section{
+  section {
     width: 100vh;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
     padding-top: 72px;
+    display: flex;
+    flex-direction: row;
   }
 }
-.mdc-layout--column{
-  header{
+.mdc-layout--column {
+  header {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -42,9 +46,27 @@
     bottom: 0px;
     width: 72px;
   }
-  section{
+  section {
     width: 100vh;
     height: 100vh;
     padding-left: 72px;
+    overflow: hidden;
   }
+}
+
+@media (min-width: 840px) {
+  .mdc-layout {
+    header {
+      .more,
+      .menu {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 839px) {
+}
+
+@media (max-width: 599px) {
 }

@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo, forwardRef, useImperativeHandle, useEffect } from 'react';
+import { useState, useRef, useMemo, forwardRef, useImperativeHandle } from 'react';
 import classnames from 'classnames';
 import {List} from '@/list';
 import {Elevation} from '@/elevation';
@@ -43,15 +43,9 @@ export const Menu: MenuComponent = forwardRef(({
     doSelect(v);
     onChange?.(v);
   }
-  useEffect(() => {
-    console.log('value', value)
-    // if(value !== props.value){
-    //   onChange?.(value)
-    // }
-  }, [value]);
 
   return (
-    <MenuContext.Provider value={{open, setOpen, onChange: doChangeItem}}>
+    <MenuContext.Provider value={{open, setOpen, onChange: doChangeItem, value}}>
       <div className={classNames}>
         <div className={menu}>
           <Elevation></Elevation>

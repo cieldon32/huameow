@@ -20,12 +20,16 @@
   text-rendering: optimizeLegibility;
   text-transform: none;
   white-space: nowrap;
-  span ::slotted(svg) {
+  text-align: center;
+  vertical-align: middle;
+  direction: ltr;
+  span svg {
     fill: currentColor;
   }
-  span ::slotted(*) {
+  span {
     height: var(--_size);
     width: var(--_size);
+    display: inline-block;
   }
 }
 

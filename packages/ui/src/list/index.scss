@@ -283,9 +283,10 @@
   .content-wrapper {
     display: flex;
     width: 100%;
+    position: relative;
   }
   .content-wrapper,
-  md-ripple {
+  .mdc-ripple {
     border-radius: inherit;
   }
   .with-one-line {
@@ -350,6 +351,9 @@
     color: var(--_list-item-label-text-color);
     display: flex;
     font: var(--_list-item-label-text-type);
+  }
+  &:hover{
+    cursor: pointer;
   }
   &:hover .label-text {
     color: var(--_list-item-hover-label-text-color);

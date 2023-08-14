@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classnames from 'classnames';
 import { Field } from '@/field';
-import {Slot, useSlot} from '@/slot';
+import { Slot, useSlot } from '@/slot';
 import { CSS_CLASSES } from './constants';
-import {TextFieldProps} from './interface';
+import { TextFieldProps } from './interface';
 import './style/index.scss';
 
 export const TextField = ({
+  name,
   variant = 'filled',
-  value: defalutValue,
+  value = '',
   type,
   className,
   label,
@@ -27,8 +28,10 @@ export const TextField = ({
   step,
   rulers,
   children,
+  onChange,
   ...props
 }: TextFieldProps<string>) => {
+  const [currentValue, setCurrentValue] = useState<any>(value || '');
   const slots = useSlot(children);
   const isFilled = variant === 'filled';
   const isOutlined = variant === 'outlined';
@@ -38,12 +41,12 @@ export const TextField = ({
     [CSS_CLASSES.DISABLED]: disabled,
     [CSS_CLASSES.ERROR]: error,
   });
-  const [value, setValue] = useState(defalutValue);
   const [errorMessage, setErrorMessage] = useState(errorText);
 
   const doChange = (e: any) => {
     const v = e.target.value;
-    setValue(v);
+    onChange?.(v);
+    setCurrentValue(v);
   };
 
   const doBlur = (e: any) => {
@@ -78,6 +81,10 @@ export const TextField = ({
     }
   };
 
+  useEffect(() => {
+    setCurrentValue(value);
+  }, [value]);
+
   return (
     <div className={classNames} {...props}>
       <div className="text-field">
@@ -86,19 +93,34 @@ export const TextField = ({
           disabled={disabled}
           error={!!errorMessage}
           required={required}
-          populated={!!value}
+          populated={!!currentValue}
           onBlur={doBlur}
+          variant={variant}
         >
           <Slot name="start">
-            <span className="icon leading">{slots['leadingicon']}</span>
+            {
+              slots['leadingicon'] ? (<span className="icon leading">{slots['leadingicon']}</span>) : null
+            }
+            {
+              slots['start']
+            }
           </Slot>
           <Slot name="end">
-            <span className="icon trailing">{slots['trailingicon']}</span>
+            {
+              slots['trailingicon'] ? (<span className="icon trailing">{slots['trailingicon']}</span>) : null
+            }
+            {
+              slots['end']
+            }
           </Slot>
           <Slot name="supporting-text">
+            {
+              slots['supporting-text']
+            }
             <span>{!!errorMessage ? errorMessage : prefixText}</span>
           </Slot>
           <Slot name="supporting-text-end">
+            {slots['supporting-text-end']}
             {maxlength ? (
               <span>
                 {value?.length}/{maxlength}
@@ -117,7 +139,8 @@ export const TextField = ({
             required={required}
             step={step}
             onChange={doChange}
-
+            name={name}
+            value={currentValue}
           />
           <span className="suffix">{suffixText}</span>
         </Field>

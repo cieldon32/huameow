@@ -1,36 +1,33 @@
 import { forwardRef } from 'react';
 import classnames from 'classnames';
-// import {is, difference} from 'ramda';
-import {Nav} from '@/nav';
+import {Nav} from '@/nav/bar';
+import { useSlot, Slot } from '@/slot';
+import {AppBar} from './app-bar';
 import {CSS_CLASSES} from './constants';
 import {LayoutProps} from './interface';
 import './style/index.scss';
 
 
 export const Layout = forwardRef(({
-  config: {navs},
+  navs = [],
   dir = 'row',
-  active,
   className,
   children
 }: LayoutProps, ref: any) => {
+  const slots = useSlot(children);
   const classNames = classnames(CSS_CLASSES.ROOT, className, {
     [CSS_CLASSES.COLUMN]: dir === 'column',
     [CSS_CLASSES.ROW]: dir === 'row',
   });
-  // const list = Children.toArray(children);
-  // const slots = list.filter((child: any) => !is(String, child) && child.props.slot);
-  // const childs = difference(list, slots);
-  // const nav = slots.filter((child: any) => child.props.slot === 'nav');
   return (
     <div className={classNames} ref={ref}>
-      <header>
-        <div>logo</div>
-        <Nav>
+      <AppBar title={slots.title}>
+        {
+          navs?.length ? (
+            <Nav>
           {
             navs.map((nav: any) => (
               <Nav.Tab
-                active={nav.value === active}
                 icon={nav.icon}
                 key={nav.value}
               >
@@ -38,8 +35,12 @@ export const Layout = forwardRef(({
               </Nav.Tab>
             ))
           }
+
         </Nav>
-      </header>
+          ) : null
+        }
+        <Slot name="tools">{slots.tools}</Slot>
+      </AppBar>
       <section>
       {children}
       </section>

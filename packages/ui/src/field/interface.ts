@@ -5,5 +5,5 @@ export interface FieldProps<V> extends FieldComponent<V> {
   rulers?: any;
   variant?: Variant;
   prefixText?: string;
-  suffixText?: string
+  suffixText?: string;
 }

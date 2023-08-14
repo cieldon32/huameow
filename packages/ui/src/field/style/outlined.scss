@@ -299,6 +299,7 @@
   opacity: 0;
   transition: opacity 0.15s cubic-bezier(0.2, 0, 0, 1);
 }
+
 .focused .outline-end:after,
 .focused .outline-start:after {
   opacity: 1;

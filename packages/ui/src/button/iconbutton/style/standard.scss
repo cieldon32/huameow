@@ -88,8 +88,8 @@
     0.12
   );
   --md-focus-ring-shape: var(--_state-layer-shape);
-  height: var(--_state-layer-size);
-  width: var(--_state-layer-size);
+  // height: var(--_state-layer-size);
+  // width: var(--_state-layer-size);
   &.standard {
     --md-ripple-focus-color: var(--_unselected-focus-state-layer-color);
     --md-ripple-focus-opacity: var(--_unselected-focus-state-layer-opacity);

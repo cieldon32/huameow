@@ -1,18 +1,18 @@
 import classnames from 'classnames';
 import {Button} from '@/button';
-import type{BaseCompaonentProps} from '@/base/default.interface';
+import {FABProps} from './interface';
 import {CSS_CLASSES} from './constants';
 import './index.scss';
 
 export const FAB = ({
-  theme,
+  state,
   className,
   children
-}: BaseCompaonentProps) => {
+}: FABProps) => {
   const classNames = classnames(CSS_CLASSES.ROOT, className, {
-    'primary': theme === 'primary',
-    'secondary': theme === 'secondary',
-    'tertiary': theme === 'tertiary',
+    'primary': state === 'primary',
+    'secondary': state === 'secondary',
+    'tertiary': state === 'tertiary',
   });
 
   return (

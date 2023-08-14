@@ -1,0 +1,27 @@
+.mdc-tabs {
+  align-items: end;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+  position: relative;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  &[hidden] {
+    display: none;
+  }
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &.vertical {
+    align-items: stretch;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+}
+
+.mdc-tabs-content{
+  padding: 10px;
+}
