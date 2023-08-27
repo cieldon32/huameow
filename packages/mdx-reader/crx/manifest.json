@@ -1,0 +1,25 @@
+{
+  "name": "我的字典",
+  "description": "基于牛津高阶再编辑的字典",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "dian.png",
+      "32": "dian.png",
+      "48": "dian.png",
+      "128": "dian.png"
+    }
+  },
+  "icons": {
+    "16": "dian.png",
+    "32": "dian.png",
+    "48": "dian.png",
+    "128": "dian.png"
+  }
+}

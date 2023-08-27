@@ -1,14 +1,21 @@
 .mdc-icon-button {
-  -webkit-tap-highlight-color: transparent;
-  --md-focus-ring-shape-start-start: var(--_container-shape-start-start);
-  --md-focus-ring-shape-start-end: var(--_container-shape-start-end);
-  --md-focus-ring-shape-end-end: var(--_container-shape-end-end);
-  --md-focus-ring-shape-end-start: var(--_container-shape-end-start);
+  &.mdc-button{
+    --_container-size: 40px;
+    --_spacing-leading: 0;
+    --_spacing-trailing: 0;
+    --_only-icon-icon-size: 24px;
+    --_disabled-icon-color: var(--md-sys-color-on-surface);
+    --_disabled-icon-opacity: 0.38;
+    --md-focus-ring-shape-start-start: var(--_container-shape-start-start);
+    --md-focus-ring-shape-start-end: var(--_container-shape-start-end);
+    --md-focus-ring-shape-end-end: var(--_container-shape-end-end);
+    --md-focus-ring-shape-end-start: var(--_container-shape-end-start);
+  }
   display: inline-flex;
-  // height: var(--_container-size);
+  height: var(--_container-size);
   justify-content: center;
   outline: none;
-  // width: var(--_container-size);
+  width: var(--_container-size);
 }
 .mdc-icon-button[disabled] {
   pointer-events: none;
@@ -42,11 +49,16 @@
     border-start-start-radius: var(--_container-shape-start-start);
     z-index: -1;
   }
-  &.flip-icon .icon {
+  &.flip-icon .mdc-icon {
     transform: scaleX(-1);
   }
-  .icon {
+  &.mdc-button .mdc-icon {
     display: inline-flex;
+    font-size: var(--_only-icon-icon-size);
+    inline-size: var(--_only-icon-icon-size);
+    block-size: var(--_only-icon-icon-size);
+    height: var(--_only-icon-icon-size);
+    width: var(--_only-icon-icon-size);
   }
   .link {
     height: 100%;

@@ -45,7 +45,7 @@ export const Button: ButtonComponent = forwardRef(
     const props = {
       className: classNames,
       disabled: isDisabled,
-      ref,
+      ref: $el,
       onClick,
       active,
     };
@@ -73,11 +73,11 @@ export const Button: ButtonComponent = forwardRef(
       return (
         <>
           {href ? (
-            <a {...props} href={href} target={target} ref={$el}>
+            <a {...props} href={href} target={target}>
               {content}
             </a>
           ) : (
-            <button {...props} ref={$el} type="button">
+            <button {...props} type="button">
               {content}
             </button>
           )}

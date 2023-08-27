@@ -8,7 +8,7 @@ export function useSlot(children: any) {
     if(React.isValidElement(child)){
       const type = child.type as any;
       const props = child.props;
-      const name = type.name || type.displayName;
+      const name = type.displayName;
       if(name === 'Slot') {
         const slot = type.getSlot(child.props);
         result[props.name] = slot.next().value;

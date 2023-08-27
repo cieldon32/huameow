@@ -1,3 +1,4 @@
+import './base/style.scss';
 
 export {argbFromHex, themeFromSourceColor, applyTheme} from '@/theme';
 export {Badge} from '@/badge';

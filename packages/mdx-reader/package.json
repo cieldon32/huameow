@@ -1,0 +1,44 @@
+{
+  "name": "mdict-reader",
+  "version": "0.0.1",
+  "description": "read mdx",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "build:type": "tsc -p ./tsconfig.type.json",
+    "watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel start watch",
+    "start": "rollup -c rollup.config.demo.js -w",
+    "crx": "rollup -c rollup.config.crx.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "author": {
+    "name": "cieldon",
+    "email": "cieldon32@gmail.com"
+  },
+  "files": [
+    "lib/index.cjs.js",
+    "lib/index.esm.js",
+    "lib/index.d.ts",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cieldon32/huameow.git",
+    "directory": "packages/ui"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "pako": "^2.0.4",
+    "ramda": "^0.28.0",
+    "rxjs": "^7.5.2"
+  }
+}

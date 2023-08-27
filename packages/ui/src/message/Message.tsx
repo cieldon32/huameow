@@ -1,5 +1,5 @@
 import { forwardRef, useImperativeHandle, useState } from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import classnames from 'classnames';
 import {Dialog} from '@/dialog';
 import {Notice} from './Notice';
@@ -59,5 +59,8 @@ Message.instance = (type: string, cb: Function) => {
   const div = document.createElement('div');
   div.setAttribute('id', 'message');
   document.body.appendChild(div);
-  ReactDOM.render(<Message ref={ref} type={type}></Message>, div)
+  const root = ReactDOM.createRoot(
+    div as HTMLElement
+  );
+  root.render(<Message ref={ref} type={type}></Message>);
 }

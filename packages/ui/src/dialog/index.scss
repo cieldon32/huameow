@@ -144,7 +144,7 @@
   }
   .close{
     position: absolute;
-    top: 10px;
+    top: calc(-1 * var(--_container-block-padding));
     right: 0;
     padding-block-end: 0;
     padding-block-start: 0;
@@ -196,6 +196,7 @@
     flex-direction: column;
     font: var(--_headline-type);
     gap: var(--_header-spacing);
+    position: relative;
   }
   > .content {
     -webkit-margin-before: var(--_content-block-start-spacing);

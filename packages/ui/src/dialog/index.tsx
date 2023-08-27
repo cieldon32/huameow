@@ -135,11 +135,12 @@ export const Dialog : DialogComponent = forwardRef(
             onPointerMove={() => doPointerMove}
             onPointerUp={() => doDragEnd}
           >
-            <Button type="icon" onClick={doClose} className="close">close</Button>
+
             <Elevation></Elevation>
-            {slots['header'] || slots['title'] || title ? (
-              <div className="header">{slots['title'] || title}</div>
-            ) : null}
+            <div className="header">
+                {slots['title'] || title}
+                <Button type="icon" onClick={doClose} className="close">close</Button>
+              </div>
 
             <div className="content" ref={contentElement}>
               {slots['children']}

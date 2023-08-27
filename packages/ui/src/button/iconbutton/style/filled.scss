@@ -1,26 +1,6 @@
 .mdc-filled-icon-button {
-  --_container-color: var(
-    --md-filled-icon-button-container-color,
-    var(--md-sys-color-primary, #6750a4)
-  );
-  --_container-shape: var(--md-filled-icon-button-container-shape, 9999px);
-  --_container-size: var(--md-filled-icon-button-container-size, 40px);
-  --_disabled-container-color: var(
-    --md-filled-icon-button-disabled-container-color,
-    var(--md-sys-color-on-surface, #1d1b20)
-  );
-  --_disabled-container-opacity: var(
-    --md-filled-icon-button-disabled-container-opacity,
-    0.12
-  );
-  --_disabled-icon-color: var(
-    --md-filled-icon-button-disabled-icon-color,
-    var(--md-sys-color-on-surface, #1d1b20)
-  );
-  --_disabled-icon-opacity: var(
-    --md-filled-icon-button-disabled-icon-opacity,
-    0.38
-  );
+
+
   --_focus-icon-color: var(
     --md-filled-icon-button-focus-icon-color,
     var(--md-sys-color-on-primary, #fff)

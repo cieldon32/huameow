@@ -77,6 +77,7 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/editor', label: 'Editor', position: 'left'},
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -133,6 +134,14 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      tags: {
+        headTags: [{
+          tagName: "script",
+          innerHTML: `
+          CSS.paintWorklet.addModule('/cssPaint/point.js')
+          `,
+      }],
+      }
     }),
     plugins: [
       require.resolve('./plugins/mdx'),
@@ -146,6 +155,7 @@ const config = {
           }
         }
       ],
+      'docusaurus-plugin-script-tags'
     ],
     customFields: {
       codeSandboxPacakgeConfig: {
@@ -162,6 +172,7 @@ const config = {
       },
     },
     stylesheets: [
+      'https://fonts.googleapis.com/icon?family=Material+Icons',
       'https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined'
     ]
 };

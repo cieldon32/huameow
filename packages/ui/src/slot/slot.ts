@@ -8,6 +8,7 @@ function Slot(_: SlotProps): ReactElement {
 Slot.getSlot = function* getCollectionNode(props: SlotProps): any {
   yield props.children;
 };
+Slot.displayName = 'Slot';
 
 let _Slot = Slot as (props: SlotProps) => JSX.Element;
 export default _Slot;

@@ -17,10 +17,10 @@ export function Form({ children, className }: any) {
       if(child.props.value){
         params[child.props.name] = child.props.value;
       }
-    })
+    });
     setRequired(list);
     setFileds(params);
-  }, [children]);
+  }, []);
   return (
     <form className={classNames}>
       {React.Children.map(children, child => {
@@ -48,13 +48,18 @@ export function Form({ children, className }: any) {
         }
         function doChange(value: any) {
           const v = restValue(value);
-          setFileds((res: any) => ({ ...res, [name]: v }));
+          setFileds((res: any) => {
+            const result = { ...res, [name]: v }
+            return result
+          });
         }
         function doSubmit() {
           const list = requireds.filter((key: string) => fileds[key]);
-          if (requireds.length === list.length) {
+          if (requireds.length && requireds.length === list.length) {
             onSubmit(fileds);
-          } else {
+          }
+          if(!requireds.length){
+            onSubmit(fileds);
           }
         }
         const events = isField

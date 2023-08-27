@@ -28,6 +28,7 @@ dist/
 coverage/
 release/
 examples/
+projects/
 
 # git ignore for local test projects
 local-test-project/*/

@@ -263,7 +263,6 @@
   --md-ripple-focus-opacity: var(--_list-item-focus-state-layer-opacity);
   color: unset;
   .list-item {
-    -webkit-tap-highlight-color: transparent;
     align-items: center;
     background-color: var(--_list-item-container-color);
     border-radius: var(--_list-item-container-shape);

@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./lib",
+
+    /* Basic Options */
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["es6", "dom"],
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": false,
+    "sourceMap": true,
+    "composite": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "strictBindCallApply": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+
+    /* 实验支持  */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "allowSyntheticDefaultImports": true,
+
+    /* Cli Options */
+    "pretty": true,
+
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/theme/*": ["src/theme/*"]
+    }
+  },
+  "include": ["src/**/*", "**/*.spec.ts"],
+  "exclude": ["node_modules"]
+}

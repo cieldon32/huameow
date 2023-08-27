@@ -48,17 +48,18 @@ export const IconButton = forwardRef(
         setSelected(!selected);
         onClick?.(e);
       },
+      ref: $el
     };
     const content = (
       <>
         <Focus parent={$el}></Focus>
         <Ripple parent={$el}></Ripple>
         {isStringChildren ? (
-          <Icon className="icon">{children}</Icon>
+          <Icon>{children}</Icon>
         ) : (
           <>
             {!selected ? (
-              <span className="icon">{slots['leadingicon']}</span>
+              <span>{slots['leadingicon']}</span>
             ) : (
               <span className="icon icon--selected">
                 {slots['selectedIcon'] ||slots['leadingicon'] }

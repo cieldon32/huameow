@@ -3,11 +3,7 @@
     --md-filled-tonal-icon-button-container-color,
     var(--md-sys-color-secondary-container, #e8def8)
   );
-  --_container-shape: var(
-    --md-filled-tonal-icon-button-container-shape,
-    9999px
-  );
-  --_container-size: var(--md-filled-tonal-icon-button-container-size, 40px);
+
   --_disabled-container-color: var(
     --md-filled-tonal-icon-button-disabled-container-color,
     var(--md-sys-color-on-surface, #1d1b20)
